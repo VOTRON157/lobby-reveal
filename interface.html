@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+</head>
+
+<body>
+    <div class="container">
+        <img src="images/lol.png" width="150px" height="150px">
+        <button id="revelar">
+            Revelar Nicks
+        </button>
+    </div>
+    <style>
+        .container {
+            margin: 20px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        p {
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+        }
+
+        button {
+            border-image: linear-gradient(to top, #785A28, #C89B3C);
+            border-image-slice: 1;
+            cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #C8AA6E;
+            background-color: #091428;
+            width: 120px;
+            height: 40px;
+            transition: all 0.5s ease-out 100ms
+        }
+
+        button:hover {
+            color: #F0E6D2;
+        }
+
+        body {
+            background-image: url('./images/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            margin: 0;
+            font-family: 'Ikka Rounded', sans-serif;
+        }
+    </style>
+
+    <script>
+        window.electronAPI.setTitle('Lobby Reveal v1.0')
+        try {
+            var authButton = document.getElementById('revelar');
+            authButton.addEventListener('click', function () {
+                console.log(a)
+            });
+        } catch (e) {
+            console.log(e)
+        }
+
+
+    </script>
+    <script>
+        const counter = document.getElementById('revelar')
+
+        counter.addEventListener('click', () => {
+            window.electronAPI.reveal()
+        });
+
+    </script>
+</body>
+
+</html>
