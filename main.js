@@ -25,6 +25,8 @@ function createWindow() {
     if(!lolIsOpen) return event.reply('show-summoners', 'Seu League of Legends não está aberto.')
     const summoner = await revealLobby()
     if(!summoner) return event.reply('show-summoners', 'Você não está em uma seleção de campeões.')
+    console.log('\n\nSummoners name: ' + summoner.split('summoners=')[1])
+    console.log('OPGG Link: ' + summoner)
     win.loadURL(summoner)
   })
 
