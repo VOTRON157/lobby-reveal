@@ -22,7 +22,7 @@ function revealLobby() {
             const riot_auth = stdout.split('--riotclient-auth-token=')[1].split(' ')[0].replace('"', '')
             const riot_port = stdout.split('--riotclient-app-port=')[1].split(' ')[0].replace('"', '')
             const region = stdout.split('--region=')[1].split(' ')[0].replace('"', '')
-            if(!region.length) region = 'EUW'
+            if(!region.length || region == 'UNKNOWN') region = 'EUW'
 
             const httpsAgent = new https.Agent({
                 rejectUnauthorized: false
